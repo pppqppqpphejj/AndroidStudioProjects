@@ -66,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(name, username,email,password,responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(name, username,password,email,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
             }

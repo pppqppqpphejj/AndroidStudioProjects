@@ -3,11 +3,12 @@
     
     $name = $_POST["name"];
     $username = $_POST["username"];
-    $email = $_POST["email"];
     $password = $_POST["password"];
+    $email = $_POST["email"];
+    
 
-    $statement = mysqli_prepare($con, "INSERT INTO user (name, username, email,password) VALUES (?,?,?,?)");
-    mysqli_stmt_bind_param($statement, "siss", $name, $username,$email,$password);
+    $statement = mysqli_prepare($con, "INSERT INTO user (name, username, password, email) VALUES (?,?,?,?)");
+    mysqli_stmt_bind_param($statement, "siss", $name, $username,$password,$email);
     mysqli_stmt_execute($statement);
     
     $response = array();
